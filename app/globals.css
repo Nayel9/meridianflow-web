@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html,
+  body {
+    @apply bg-bg text-fg;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, oklch(0.84 0.09 200 / 0.05), transparent 60%),
+      var(--tw-bg-opacity, 1) oklch(0.145 0.008 250);
+  }
+
+  ::selection {
+    @apply bg-accent-soft text-fg;
+  }
+
+  /* Focus rings — keyboard-only, premium */
+  :focus-visible {
+    outline: 2px solid oklch(0.84 0.09 200 / 0.55);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Subtle background grid — referenced by hero */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, oklch(0.265 0.012 250 / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.265 0.012 250 / 0.35) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.12em] text-accent;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-[6px] w-[6px] rounded-[1px] bg-accent;
+  }
+
+  .section-title {
+    @apply text-[clamp(28px,4vw,44px)] font-medium leading-[1.08] tracking-tighter2 text-balance;
+  }
+
+  .section-sub {
+    @apply max-w-[580px] text-[17px] tracking-[-0.005em] text-fg-mute text-pretty;
+  }
+
+  .tag {
+    @apply inline-flex h-5 items-center gap-1.5 rounded-[4px] border border-line-soft bg-bg-elev-2 px-[7px] font-mono text-[10.5px] uppercase tracking-[0.04em] text-fg-soft;
+  }
+  .tag-pass {
+    @apply border-pass-line bg-pass-soft text-pass;
+  }
+  .tag-fail {
+    @apply border-fail-line bg-fail-soft text-fail;
+  }
+  .tag-warn {
+    @apply border-warn-line bg-warn-soft text-warn;
+  }
+  .tag-info {
+    @apply border-accent-line bg-accent-soft text-accent;
+  }
+
+  .mono {
+    @apply font-mono;
+  }
+
+  /* Code token colors (used in inline code samples) */
+  .tok-kw {
+    color: oklch(0.78 0.13 305);
+  }
+  .tok-fn {
+    color: oklch(0.84 0.09 200);
+  }
+  .tok-str {
+    color: oklch(0.82 0.13 95);
+  }
+  .tok-num {
+    color: oklch(0.8 0.12 35);
+  }
+  .tok-com {
+    color: oklch(0.48 0.012 245);
+    font-style: italic;
+  }
+  .tok-prop {
+    color: oklch(0.78 0.1 175);
+  }
+  .tok-fail {
+    color: oklch(0.72 0.17 25);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
