@@ -14,17 +14,11 @@ const PRODUCT: LinkItem[] = [
   { href: "/security", key: "security" },
   { href: "/#stack", key: "stack" },
 ];
-const COMPANY: LinkItem[] = [
-  { href: "/contact", key: "about" },
-  { href: "/contact", key: "careers" },
-  { href: "/docs", key: "blog" },
-  { href: "/contact", key: "contact" },
-];
 const TRUST: LinkItem[] = [
   { href: "/security", key: "secCompliance" },
   { href: "/privacy", key: "privacy" },
   { href: "/terms", key: "terms" },
-  { href: "/docs", key: "status" },
+  { href: "/contact", key: "dpa" },
 ];
 
 function Column({ title, links }: { title: string; links: LinkItem[] }) {
@@ -50,7 +44,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line-soft py-16 pb-10 text-fg-mute">
       <div className="shell">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex">
               <Brand />
@@ -60,12 +54,17 @@ export function Footer() {
             </p>
           </div>
           <Column title={t.footer.product} links={PRODUCT} />
-          <Column title={t.footer.company} links={COMPANY} />
           <Column title={t.footer.trust} links={TRUST} />
         </div>
-        <div className="mt-12 flex flex-wrap justify-between gap-4 border-t border-line-soft pt-6 font-mono text-[11.5px] uppercase tracking-[0.04em] text-fg-dim">
-          <span>{t.footer.copyright}</span>
-          <span>{t.footer.build}</span>
+        <div className="mt-12 border-t border-line-soft pt-6 font-mono text-[11.5px] uppercase tracking-[0.04em] text-fg-dim">
+          <a
+            href="https://pennarstudio.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-fg-mute"
+          >
+            {t.footer.copyright}
+          </a>
         </div>
       </div>
     </footer>

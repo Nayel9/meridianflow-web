@@ -237,24 +237,17 @@ export type Translations = {
   footer: {
     tagline: string;
     product: string;
-    company: string;
     trust: string;
     links: {
       howItWorks: string;
       outputs: string;
       security: string;
       stack: string;
-      about: string;
-      careers: string;
-      blog: string;
-      contact: string;
       secCompliance: string;
       privacy: string;
       terms: string;
-      status: string;
       dpa: string;
     };
     copyright: string;
-    build: string;
   };
 };
