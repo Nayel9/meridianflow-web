@@ -1,36 +1,85 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import { useT } from "@/lib/i18n/context";
+import { ArrowRight, CheckCircle2, Loader2, AlertTriangle } from "lucide-react";
+import { useLang, useT } from "@/lib/i18n/context";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import type { LeadType } from "@/lib/contact/types";
 
-type FormState = "idle" | "submitting" | "success";
+type FormState =
+  | { kind: "idle" }
+  | { kind: "submitting" }
+  | { kind: "success" }
+  | { kind: "error"; message: string };
 
-export function ContactForm() {
+export function ContactForm({ leadType = "Pilote" }: { leadType?: LeadType }) {
   const t = useT();
-  const [state, setState] = React.useState<FormState>("idle");
+  const { lang } = useLang();
+  const [state, setState] = React.useState<FormState>({ kind: "idle" });
   const formRef = React.useRef<HTMLFormElement>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setState("submitting");
-    // Mocked submit. Replace with Resend/Formspree integration when keys are wired.
-    window.setTimeout(() => setState("success"), 700);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      company: String(formData.get("company") ?? ""),
+      role: String(formData.get("role") ?? "") || undefined,
+      teamSize: String(formData.get("teamSize") ?? "") || undefined,
+      stack: String(formData.get("stack") ?? "") || undefined,
+      pain: String(formData.get("pain") ?? "") || undefined,
+      message: String(formData.get("message") ?? "") || undefined,
+      website: String(formData.get("website") ?? ""), // honeypot
+      lang,
+      type: leadType,
+      formUrl: typeof window !== "undefined" ? window.location.href : undefined,
+    };
+
+    setState({ kind: "submitting" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        let msg = lang === "fr" ? "Envoi impossible — veuillez réessayer." : "Couldn't send — please try again.";
+        try {
+          const body = (await res.json()) as { error?: string };
+          if (body?.error) msg = body.error;
+        } catch {
+          /* ignore */
+        }
+        setState({ kind: "error", message: msg });
+        return;
+      }
+      setState({ kind: "success" });
+    } catch {
+      setState({
+        kind: "error",
+        message:
+          lang === "fr"
+            ? "Connexion impossible. Vérifiez votre réseau et réessayez."
+            : "Connection failed. Check your network and try again.",
+      });
+    }
   }
 
   function reset() {
-    setState("idle");
+    setState({ kind: "idle" });
     formRef.current?.reset();
   }
 
-  if (state === "success") {
+  if (state.kind === "success") {
     return (
       <div
         role="status"
+        aria-live="polite"
         className="flex flex-col items-start gap-4 rounded-xl border border-pass-line bg-pass-soft p-6 text-fg sm:p-8"
       >
         <div className="flex items-center gap-3">
@@ -47,17 +96,26 @@ export function ContactForm() {
 
   const f = t.contact.fields;
   const p = t.contact.placeholders;
+  const submitting = state.kind === "submitting";
 
   return (
     <form
       ref={formRef}
       onSubmit={handleSubmit}
+      noValidate
       className="rounded-xl border border-line bg-bg-elev p-6 sm:p-8"
     >
       <div className="mb-6">
         <h3 className="text-[18px] font-medium tracking-[-0.01em] text-fg">{t.contact.formTitle}</h3>
         <p className="mt-1 text-[13.5px] text-fg-mute">{t.contact.formSub}</p>
       </div>
+
+      {/* honeypot — visually hidden but in DOM, real users won't fill it */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-[5000px] h-0 w-0 overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="name" label={f.name}>
           <Input id="name" name="name" required autoComplete="name" placeholder={p.name} />
@@ -84,12 +142,22 @@ export function ContactForm() {
           <Textarea id="message" name="message" placeholder={p.message} rows={4} />
         </Field>
       </div>
-      <div className="mt-7 flex items-center justify-between gap-4">
-        <p className="text-[12px] text-fg-dim">
-          {"hello@meridianflow.dev"}
-        </p>
-        <Button type="submit" size="lg" disabled={state === "submitting"}>
-          {state === "submitting" ? (
+
+      {state.kind === "error" ? (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="mt-5 flex items-start gap-2.5 rounded-md border border-fail-line bg-fail-soft px-4 py-3 text-[13.5px] text-fail"
+        >
+          <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+          <span>{state.message}</span>
+        </div>
+      ) : null}
+
+      <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
+        <p className="font-mono text-[12px] tracking-[0.04em] text-fg-dim">meridianflow@pennarstudio.fr</p>
+        <Button type="submit" size="lg" disabled={submitting} aria-busy={submitting}>
+          {submitting ? (
             <>
               <Loader2 className="size-4 animate-spin" /> {t.contact.submitting}
             </>

@@ -333,8 +333,13 @@ const fr: Translations = {
     fitItems: ["10+ ingénieurs", "Workflow Jira", "Stack compatible Playwright", "Staging disponible"],
   },
   contact: {
+    pageEyebrow: "Contact",
     pageTitle: "Parlons de votre pretriage",
     pageSub: "Décrivez votre équipe et vos points de friction QA. Nous revenons vers vous sous 48h ouvrées avec un plan concret.",
+    aboutIntro:
+      "Que vous soyez en plein audit QA ou simplement curieux du pretriage, écrivez-nous — un fondateur lit personnellement chaque message.",
+    aboutTzLine: "Fuseaux EU & US · réponse sous 48h ouvrées",
+    aboutLocLine: "Paris · Berlin",
     formTitle: "Candidature pilote",
     formSub: "Aucun engagement. Toutes les informations restent confidentielles.",
     fields: {
@@ -367,12 +372,55 @@ const fr: Translations = {
     privacyTitle: "Confidentialité",
     privacyIntro:
       "Meridian Flow traite les données strictement nécessaires au pretriage technique. Aucune donnée client n'est utilisée pour entraîner des modèles tiers. Cette page sera enrichie avant le lancement GA.",
+    privacySections: [
+      {
+        heading: "Données collectées",
+        body: "Informations de compte, données de facturation, et les artefacts produits par le runner que vous choisissez de partager avec notre control plane (verdicts, traces, captures expurgées). Le runner lui-même tourne dans votre périmètre et ne transmet jamais votre code source à nos services.",
+      },
+      {
+        heading: "Utilisation des données",
+        body: "Pour faire fonctionner Meridian Flow, améliorer les heuristiques sur vos propres traces historiques (opt-out disponible), et fournir le support. Nous n'utilisons jamais les données clients pour entraîner des modèles tiers.",
+      },
+      {
+        heading: "Résidence & rétention",
+        body: "Résidence des données en UE par défaut (eu-west-3). Les artefacts sont conservés 90 jours sauf si la politique de votre workspace en dispose autrement. Les données de compte sont conservées pour la durée de votre contrat.",
+      },
+    ],
     termsTitle: "Conditions générales",
     termsIntro:
       "Conditions générales d'utilisation des pilotes Meridian Flow. La version finale sera publiée avant la GA. Les pilotes opèrent sous un accord de service distinct signé entre les parties.",
+    termsSections: [
+      {
+        heading: "Périmètre du pilote",
+        body: "Les pilotes tournent sur une durée convenue avec un périmètre fixe : déploiement du runner, intégration du workflow Jira, calibration des heuristiques sur une surface produit définie. Les changements hors périmètre sont tracés mais non livrés dans le cadre du pilote.",
+      },
+      {
+        heading: "Disponibilité du service",
+        body: "Les pilotes visent 99,5 % d'uptime sur le control plane, mesuré mensuellement. Le runner tourne dans votre infrastructure et sa disponibilité dépend de votre déploiement.",
+      },
+      {
+        heading: "Confidentialité",
+        body: "NDA mutuel signé avant le démarrage du pilote. Les artefacts partagés avec notre control plane restent confidentiels et ne sont jamais utilisés pour entraîner des modèles tiers ou partagés avec d'autres clients.",
+      },
+    ],
     docsTitle: "Documentation",
     docsIntro:
       "Guides d'intégration, schémas du verdict, configuration du runner et du workflow Jira. La documentation publique sera publiée à l'ouverture des pilotes.",
+    docsCards: [
+      {
+        title: "Schéma du verdict",
+        desc: "Contrat JSON émis par chaque run de pretriage — statut, catégorie, rayon d'impact, composant suspecté, artefacts.",
+      },
+      {
+        title: "Installation du runner",
+        desc: "Déploiement Docker / sidecar k8s, credentials de staging, périmètre des variables d'environnement. Mis en place avec votre solutions engineer.",
+      },
+      {
+        title: "Workflow Jira",
+        desc: "Labels de transition, règles d'automatisation, et comment Meridian Flow republie les verdicts en commentaires structurés.",
+      },
+    ],
+    docsCta: "Demander un accès",
     securityPageTitle: "Sécurité & conformité",
     securityPageIntro:
       "Notre architecture sépare strictement votre code de notre control plane. Cette page détaille notre approche, nos modes de confidentialité, et notre progression SOC 2.",
@@ -381,6 +429,13 @@ const fr: Translations = {
       "Quatre places restent disponibles pour la cohorte Q3. Décrivez votre équipe ci-dessous, nous reviendrons vers vous personnellement sous 48h ouvrées.",
     lastUpdated: "Dernière mise à jour",
     backHome: "Retour à l'accueil",
+  },
+  notFound: {
+    eyebrow: "404",
+    title: "Page introuvable",
+    sub: "Cette page n'existe pas — ou n'est pas encore publique. Retournez à l'accueil ou écrivez-nous.",
+    ctaHome: "Retour à l'accueil",
+    ctaContact: "Nous contacter",
   },
   footer: {
     tagline: "Pretriage propulsé par l'IA pour les équipes logicielles. Construit à Paris & Berlin.",
@@ -738,9 +793,14 @@ const en: Translations = {
     fitItems: ["10+ engineers", "Jira-based flow", "Playwright-friendly stack", "Staging available"],
   },
   contact: {
+    pageEyebrow: "Contact",
     pageTitle: "Let's talk pretriage",
     pageSub:
       "Tell us about your team and where QA friction shows up. We come back within two business days with a concrete plan.",
+    aboutIntro:
+      "Whether you're mid-QA-audit or just curious about pretriage — write us. A founder personally reads every message.",
+    aboutTzLine: "EU & US timezones · reply within two business days",
+    aboutLocLine: "Paris · Berlin",
     formTitle: "Pilot application",
     formSub: "No commitment. Everything you share stays confidential.",
     fields: {
@@ -773,12 +833,55 @@ const en: Translations = {
     privacyTitle: "Privacy",
     privacyIntro:
       "Meridian Flow handles only the data strictly required for technical pretriage. We never use customer data to train third-party models. This page will be expanded before GA.",
+    privacySections: [
+      {
+        heading: "Data we collect",
+        body: "Account information, billing details, and the artefacts produced by the runner you choose to share with our control plane (verdicts, traces, redacted screenshots). The runner itself runs inside your perimeter and never transmits source code to us.",
+      },
+      {
+        heading: "How we use it",
+        body: "To operate Meridian Flow, improve heuristics on your own historical traces (opt-out available), and provide support. We never use customer data to train third-party models.",
+      },
+      {
+        heading: "Residency & retention",
+        body: "EU data residency by default (eu-west-3). Artefacts are retained 90 days unless your workspace policy says otherwise. Account data is retained for the duration of your contract.",
+      },
+    ],
     termsTitle: "Terms of service",
     termsIntro:
       "Terms governing Meridian Flow pilots. The final version will be published before GA. Pilots operate under a separate service agreement signed between the parties.",
+    termsSections: [
+      {
+        heading: "Pilot scope",
+        body: "Pilots run for an agreed duration with a fixed scope: runner deployment, Jira workflow integration, and heuristic calibration against a defined product surface. Out-of-scope changes are tracked but not delivered under the pilot.",
+      },
+      {
+        heading: "Service availability",
+        body: "Pilots target 99.5% control-plane uptime measured monthly. The runner runs inside your infrastructure and its availability follows your own deployment.",
+      },
+      {
+        heading: "Confidentiality",
+        body: "Mutual NDA executed before pilot kickoff. Artefacts shared with our control plane stay confidential and are never used to train third-party models or shared with other customers.",
+      },
+    ],
     docsTitle: "Documentation",
     docsIntro:
       "Integration guides, verdict schema, runner and Jira workflow configuration. Public docs will be published when pilots open.",
+    docsCards: [
+      {
+        title: "Verdict schema",
+        desc: "JSON contract that every pretriage run emits — status, category, blast radius, suspected component, artefacts.",
+      },
+      {
+        title: "Runner setup",
+        desc: "Docker / k8s sidecar deployment, staging credentials, env scopes. Pulled together with your solutions engineer.",
+      },
+      {
+        title: "Jira workflow",
+        desc: "Transition labels, automation rules, and how Meridian Flow posts back verdicts as structured comments.",
+      },
+    ],
+    docsCta: "Request access",
     securityPageTitle: "Security & compliance",
     securityPageIntro:
       "Our architecture strictly separates your code from our control plane. This page details our approach, privacy modes, and SOC 2 progress.",
@@ -787,6 +890,13 @@ const en: Translations = {
       "Four spots remain for the Q3 cohort. Tell us about your team below and we'll get back to you personally within two business days.",
     lastUpdated: "Last updated",
     backHome: "Back to home",
+  },
+  notFound: {
+    eyebrow: "404",
+    title: "Page not found",
+    sub: "This page doesn't exist — or isn't public yet. Head back home or write to us.",
+    ctaHome: "Back to home",
+    ctaContact: "Get in touch",
   },
   footer: {
     tagline: "AI-powered pretriage for software teams. Built in Paris & Berlin.",

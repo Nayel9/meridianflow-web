@@ -175,8 +175,12 @@ export type Translations = {
     fitItems: string[];
   };
   contact: {
+    pageEyebrow: string;
     pageTitle: string;
     pageSub: string;
+    aboutIntro: string;
+    aboutTzLine: string;
+    aboutLocLine: string;
     formTitle: string;
     formSub: string;
     fields: {
@@ -208,16 +212,27 @@ export type Translations = {
   legal: {
     privacyTitle: string;
     privacyIntro: string;
+    privacySections: { heading: string; body: string }[];
     termsTitle: string;
     termsIntro: string;
+    termsSections: { heading: string; body: string }[];
     docsTitle: string;
     docsIntro: string;
+    docsCards: { title: string; desc: string }[];
+    docsCta: string;
     securityPageTitle: string;
     securityPageIntro: string;
     pilotPageTitle: string;
     pilotPageIntro: string;
     lastUpdated: string;
     backHome: string;
+  };
+  notFound: {
+    eyebrow: string;
+    title: string;
+    sub: string;
+    ctaHome: string;
+    ctaContact: string;
   };
   footer: {
     tagline: string;
