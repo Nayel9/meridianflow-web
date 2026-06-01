@@ -23,22 +23,22 @@ const config: Config = {
     },
     extend: {
       colors: {
-        bg: "oklch(0.145 0.008 250)",
-        "bg-elev": "oklch(0.175 0.009 250)",
-        "bg-elev-2": "oklch(0.205 0.010 250)",
-        surface: "oklch(0.185 0.010 250)",
-        line: "oklch(0.265 0.012 250)",
-        "line-soft": "oklch(0.225 0.011 250)",
+        bg: "oklch(0.145 0.004 140)",
+        "bg-elev": "oklch(0.175 0.005 140)",
+        "bg-elev-2": "oklch(0.205 0.006 140)",
+        surface: "oklch(0.185 0.005 140)",
+        line: "oklch(0.265 0.008 140)",
+        "line-soft": "oklch(0.225 0.006 140)",
 
         fg: "oklch(0.965 0.004 90)",
-        "fg-soft": "oklch(0.82 0.006 240)",
-        "fg-mute": "oklch(0.62 0.010 240)",
-        "fg-dim": "oklch(0.48 0.012 245)",
+        "fg-soft": "oklch(0.82 0.005 140)",
+        "fg-mute": "oklch(0.62 0.007 140)",
+        "fg-dim": "oklch(0.48 0.008 140)",
 
         accent: {
-          DEFAULT: "oklch(0.84 0.09 200)",
-          soft: "oklch(0.84 0.09 200 / 0.18)",
-          line: "oklch(0.84 0.09 200 / 0.32)",
+          DEFAULT: "oklch(0.87 0.20 130)",
+          soft: "oklch(0.87 0.20 130 / 0.15)",
+          line: "oklch(0.87 0.20 130 / 0.30)",
         },
 
         pass: {
@@ -57,9 +57,9 @@ const config: Config = {
           line: "oklch(0.82 0.13 75 / 0.28)",
         },
 
-        border: "oklch(0.265 0.012 250)",
-        input: "oklch(0.225 0.011 250)",
-        ring: "oklch(0.84 0.09 200 / 0.45)",
+        border: "oklch(0.265 0.008 140)",
+        input: "oklch(0.225 0.006 140)",
+        ring: "oklch(0.87 0.20 130 / 0.45)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
