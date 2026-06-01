@@ -13,7 +13,7 @@ export default function OG() {
           width: "100%",
           height: "100%",
           background:
-            "radial-gradient(ellipse 100% 60% at 30% 0%, oklch(0.87 0.20 130 / 0.10), transparent 60%), #1a1f2a",
+            "radial-gradient(ellipse 100% 60% at 30% 0%, oklch(0.87 0.20 130 / 0.10), transparent 60%), #1c1d1c",
           color: "white",
           display: "flex",
           flexDirection: "column",
