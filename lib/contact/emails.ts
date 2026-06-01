@@ -41,7 +41,7 @@ function bigBlock(label: string, value: string | undefined): string {
 
 const T = {
   fr: {
-    ownerSubject: (name: string, company: string) => `🔔 Nouveau lead Meridian Flow — ${name} (${company})`,
+    ownerSubject: (name: string, company: string) => `🔔 Nouveau lead Meridian Flow · ${name} (${company})`,
     ownerTitle: "Nouvelle candidature pilote",
     ownerContact: "Contact",
     ownerTeam: "Équipe",
@@ -59,7 +59,7 @@ const T = {
     fieldDate: "Reçu le",
     fieldLang: "Langue du visiteur",
 
-    clientSubject: "Reçu — Meridian Flow vous répond sous 48h",
+    clientSubject: "Reçu, Meridian Flow vous répond sous 48h",
     clientGreet: (firstName: string) => `Bonjour ${firstName},`,
     clientP1:
       "Merci d'avoir pris contact avec Meridian Flow. Votre candidature pilote est arrivée.",
@@ -70,13 +70,13 @@ const T = {
     clientStep2: "Déploiement du runner dans votre environnement de staging",
     clientStep3: "Pretriage en production sur vos dix premiers tickets",
     clientSummary: "Récapitulatif de votre candidature",
-    clientFooter1: "Meridian Flow — Pretriage propulsé par l'IA",
+    clientFooter1: "Meridian Flow · Pretriage technique",
     clientFooter2: "Paris · Berlin",
     clientFooter3: "meridianflow@pennarstudio.fr",
     clientCta: "Découvrir le produit",
   },
   en: {
-    ownerSubject: (name: string, company: string) => `🔔 New Meridian Flow lead — ${name} (${company})`,
+    ownerSubject: (name: string, company: string) => `🔔 New Meridian Flow lead · ${name} (${company})`,
     ownerTitle: "New pilot application",
     ownerContact: "Contact",
     ownerTeam: "Team",
@@ -94,7 +94,7 @@ const T = {
     fieldDate: "Received",
     fieldLang: "Visitor language",
 
-    clientSubject: "Received — Meridian Flow will reply within 48h",
+    clientSubject: "Received, Meridian Flow will reply within 48h",
     clientGreet: (firstName: string) => `Hi ${firstName},`,
     clientP1:
       "Thanks for reaching out to Meridian Flow. Your pilot application is in.",
@@ -105,7 +105,7 @@ const T = {
     clientStep2: "Runner deployment in your staging environment",
     clientStep3: "Production pretriage on your first ten tickets",
     clientSummary: "Application summary",
-    clientFooter1: "Meridian Flow — AI-powered pretriage",
+    clientFooter1: "Meridian Flow · Technical pretriage",
     clientFooter2: "Paris · Berlin",
     clientFooter3: "meridianflow@pennarstudio.fr",
     clientCta: "Explore the product",
@@ -191,7 +191,7 @@ ${brandHeader(t.ownerTitle, "MERIDIAN FLOW · LEAD")}
   ${bigBlock(t.fieldMessage, lead.message)}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid ${COLORS.line};border-radius:8px;overflow:hidden;margin-top:28px;">
     <tr><td colspan="2" style="padding:10px 20px;background:#f9fafb;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:${COLORS.mute};border-bottom:1px solid ${COLORS.line};">${escape(t.ownerMeta)}</td></tr>
-    ${row(t.fieldSource, lead.source || "Site web — Meridian Flow")}
+    ${row(t.fieldSource, lead.source || "Site web · Meridian Flow")}
     ${row(t.fieldLang, lead.lang.toUpperCase())}
     ${row(t.fieldDate, dateStr)}
   </table>
@@ -210,7 +210,7 @@ ${brandFooter(t)}`;
     lead.pain ? `\n${t.fieldPain}:\n${lead.pain}` : "",
     lead.message ? `\n${t.fieldMessage}:\n${lead.message}` : "",
     "",
-    `${t.fieldSource}: ${lead.source || "Site web — Meridian Flow"}`,
+    `${t.fieldSource}: ${lead.source || "Site web · Meridian Flow"}`,
     `${t.fieldDate}: ${dateStr}`,
   ]
     .filter(Boolean)
@@ -226,7 +226,7 @@ export function clientConfirmationEmail(lead: LeadPayload): { subject: string; h
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://meridianflow.dev";
 
   const body = `
-${brandHeader(lead.lang === "fr" ? "Reçu — on revient vite." : "Got it — talk soon.", "MERIDIAN FLOW · CONFIRMATION")}
+${brandHeader(lead.lang === "fr" ? "Reçu, on revient vite." : "Got it, talk soon.", "MERIDIAN FLOW · CONFIRMATION")}
 <tr><td style="padding:32px 36px 8px;">
   <p style="margin:0 0 14px;font-size:16px;color:${COLORS.dark};line-height:1.6;">${escape(t.clientGreet(firstName))}</p>
   <p style="margin:0 0 14px;font-size:15px;color:${COLORS.body};line-height:1.7;">${escape(t.clientP1)}</p>
@@ -267,7 +267,7 @@ ${brandFooter(t)}`;
     `2) ${t.clientStep2}`,
     `3) ${t.clientStep3}`,
     "",
-    `— ${t.clientFooter1}`,
+    `${t.clientFooter1}`,
     `${t.clientFooter2} · ${t.clientFooter3}`,
   ].join("\n");
 

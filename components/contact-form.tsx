@@ -48,7 +48,7 @@ export function ContactForm({ leadType = "Pilote" }: { leadType?: LeadType }) {
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
-        let msg = lang === "fr" ? "Envoi impossible — veuillez réessayer." : "Couldn't send — please try again.";
+        let msg = lang === "fr" ? "Envoi impossible, veuillez réessayer." : "Couldn't send. Please try again.";
         try {
           const body = (await res.json()) as { error?: string };
           if (body?.error) msg = body.error;

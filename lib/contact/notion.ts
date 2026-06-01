@@ -216,7 +216,7 @@ function buildNotionProperties(
     lang: lead.lang.toUpperCase(),
     type: lead.type || "Pilote",
     statut: "Nouveau",
-    source: lead.source || "Site web — Meridian Flow",
+    source: lead.source || "Site web · Meridian Flow",
     date: lead.date || new Date().toISOString(),
     formUrl: lead.formUrl,
   };

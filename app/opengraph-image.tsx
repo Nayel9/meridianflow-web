@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Meridian Flow — Pretriage for software teams";
+export const alt = "Meridian Flow · Pretriage for software teams";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,7 +53,7 @@ export default function OG() {
             }}
           >
             Bugs reach developers{" "}
-            <span style={{ color: "oklch(0.87 0.20 130)" }}>reproduced, or ruled out</span> — never ambiguous.
+            <span style={{ color: "oklch(0.87 0.20 130)" }}>reproduced, or ruled out</span>. Never ambiguous.
           </div>
         </div>
         <div

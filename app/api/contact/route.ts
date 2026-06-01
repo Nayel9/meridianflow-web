@@ -66,7 +66,7 @@ function validatePayload(raw: unknown): LeadPayload {
     message: typeof p.message === "string" ? p.message.trim() || undefined : undefined,
     lang,
     type,
-    source: typeof p.source === "string" ? p.source.trim() : "Site web — Meridian Flow",
+    source: typeof p.source === "string" ? p.source.trim() : "Site web · Meridian Flow",
     formUrl: typeof p.formUrl === "string" ? p.formUrl.trim() || undefined : undefined,
     date: new Date().toISOString(),
     website: typeof p.website === "string" ? p.website : undefined,

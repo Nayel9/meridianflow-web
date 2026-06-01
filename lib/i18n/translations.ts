@@ -33,7 +33,7 @@ const fr: Translations = {
     ticketStatus: "Triage",
     ticketTitle: "Le checkout plante parfois quand on applique un code promo",
     ticketBody:
-      "Salut l'équipe — quand j'ajoute le code SUMMER25 à la fin, la page se fige et je peux plus payer. Ça arrive sur mon MacBook dans Chrome. Pas sûr de comment reproduire, désolé. Urgent pour la campagne.",
+      "Salut l'équipe, quand j'ajoute le code SUMMER25 à la fin, la page se fige et je peux plus payer. Ça arrive sur mon MacBook dans Chrome. Pas sûr de comment reproduire, désolé. Urgent pour la campagne.",
     handoff: "transfert",
     runner: "Runner Meridian Flow",
     pretriageLabel: "PRETRIAGE · en cours",
@@ -69,7 +69,7 @@ const fr: Translations = {
         thread: [
           { from: "dev", body: "Pas reproductible en local sur main. Version du navigateur ?", when: "+2h" },
           { from: "qa", body: "Chrome 124 je crois ? Je revérifie demain.", when: "+1j" },
-          { from: "dev", body: "Il me faut les étapes exactes. Et l'env — staging ou prod ?", when: "+1j" },
+          { from: "dev", body: "Il me faut les étapes exactes. Et l'env, staging ou prod ?", when: "+1j" },
           { from: "qa", body: "staging-eu. Ça marchait hier 🤷", when: "+2j" },
         ],
       },
@@ -83,7 +83,7 @@ const fr: Translations = {
         thread: [
           { from: "dev", body: "Quel client ? On peut avoir l'ID de la facture ?", when: "+4h" },
           { from: "qa", body: "Je transfère le mail…", when: "+1j" },
-          { from: "dev", body: "Je ferme pour l'instant — pas reproductible, données floues.", when: "+3j" },
+          { from: "dev", body: "Je ferme pour l'instant, pas reproductible, données floues.", when: "+3j" },
         ],
       },
       {
@@ -96,7 +96,7 @@ const fr: Translations = {
         thread: [
           { from: "dev", body: "Lent comment ? Réseau ? Serveur ? Aucune trace fournie.", when: "+1h" },
           { from: "qa", body: "Juste lent. Marchait nickel dans mes tests.", when: "+5h" },
-          { from: "dev", body: "Je ferme — il faut un repro mesurable.", when: "+2j" },
+          { from: "dev", body: "Je ferme, il faut un repro mesurable.", when: "+2j" },
           { from: "qa", body: "Je rouvre, deux signalements de plus aujourd'hui.", when: "+5j" },
         ],
       },
@@ -111,7 +111,7 @@ const fr: Translations = {
   workflow: {
     eyebrow: "Comment ça marche",
     title: "Un pipeline de pretriage, pas une boîte de réception de plus.",
-    sub: "Meridian Flow exécute cinq étapes déterministes entre le ticket et le développeur. Chaque étape produit un artefact que la suivante — ou un humain — peut exploiter.",
+    sub: "Meridian Flow exécute cinq étapes déterministes entre le ticket et le développeur. Chaque étape produit un artefact que la suivante (ou un humain) peut exploiter.",
     raceComment: "avant le debounce",
     steps: [
       {
@@ -138,7 +138,7 @@ const fr: Translations = {
       {
         title: "Spec qui échoue",
         tag: "ARTEFACT",
-        desc: "Un spec Playwright minimal et déterministe — le plus petit test qui recrée le bug.",
+        desc: "Un spec Playwright minimal et déterministe : le plus petit test qui recrée le bug.",
         code: true,
       },
       {
@@ -156,7 +156,7 @@ const fr: Translations = {
       {
         title: "Incident prêt pour les devs",
         tag: "SORTIE",
-        desc: "Le ticket d'origine, désormais accompagné d'un verdict, d'un spec qui échoue, d'une trace, de captures et du contexte de reproduction — remis directement à l'engineering.",
+        desc: "Le ticket d'origine, désormais accompagné d'un verdict, d'un spec qui échoue, d'une trace, de captures et du contexte de reproduction, remis directement à l'engineering.",
         rows: [
           { k: "spec liée", v: "e2e/promo-code.race.spec.ts" },
           { k: "trace", v: "trace-PROD-2814.zip" },
@@ -170,7 +170,7 @@ const fr: Translations = {
   outputs: {
     eyebrow: "Ce que reçoivent les développeurs",
     title: "Cinq artefacts. Plus d'allers-retours.",
-    sub: "Chaque ticket atterrit chez l'engineering avec la même forme — pour que n'importe qui dans l'équipe puisse agir sans avoir à relire le thread Jira d'origine.",
+    sub: "Chaque ticket atterrit chez l'engineering avec la même forme, pour que n'importe qui dans l'équipe puisse agir sans avoir à relire le thread Jira d'origine.",
     tabs: [
       { id: "verdict", label: "Verdict", mono: "verdict.json" },
       { id: "spec", label: "Spec qui échoue", mono: "spec.ts" },
@@ -182,7 +182,7 @@ const fr: Translations = {
     specHeadMono: "Playwright · échoue sur main",
     specCom1: "Pretriage par Meridian Flow · PROD-2814",
     specCom2: "Reproduit 12/12 runs sur staging-eu",
-    specCom3: "pas d'attente — reproduit la race",
+    specCom3: "pas d'attente, reproduit la race",
     commentHead: "posté en commentaire Jira · PROD-2814",
     commentSub: "rédigé pour l'ingénieur d'astreinte",
     commentName: "Meridian Flow",
@@ -231,7 +231,7 @@ const fr: Translations = {
   security: {
     eyebrow: "Sécurité & architecture",
     title: "Votre code reste à l'intérieur de votre réseau.",
-    sub: "Le runner de reproduction vit dans votre infrastructure. Seuls les artefacts que vous choisissez — verdicts, traces, captures expurgées — atteignent notre control plane.",
+    sub: "Le runner de reproduction vit dans votre infrastructure. Seuls les artefacts que vous choisissez (verdicts, traces, captures expurgées) atteignent notre control plane.",
     perimeter: "VOTRE PÉRIMÈTRE",
     saasLabel: "MERIDIAN FLOW SAAS",
     nodes: {
@@ -275,7 +275,7 @@ const fr: Translations = {
   stack: {
     eyebrow: "Opinionated par design",
     title: "Conçu pour une forme d'équipe précise, volontairement.",
-    sub: "Meridian Flow ne cherche pas à être un agent IA générique. Il sait précisément qui il aide et avec quoi il s'intègre — c'est la seule façon pour le pretriage d'être fiable.",
+    sub: "Meridian Flow ne cherche pas à être un agent IA générique. Il sait précisément qui il aide et avec quoi il s'intègre. C'est la seule façon pour le pretriage d'être fiable.",
     items: [
       {
         name: "Jira",
@@ -292,7 +292,7 @@ const fr: Translations = {
       {
         name: "Environnements de staging",
         role: "où l'on reproduit",
-        desc: "Nous tournons contre du vrai staging — pas un mock. Apportez un environnement, pointez le runner dessus, donnez-lui des identifiants de test. On travaille avec la forme que vous avez déjà.",
+        desc: "Nous tournons contre du vrai staging, pas un mock. Apportez un environnement, pointez le runner dessus, donnez-lui des identifiants de test. On travaille avec la forme que vous avez déjà.",
         mono: "staging.* · preview.* · environnements éphémères",
       },
       {
@@ -302,7 +302,7 @@ const fr: Translations = {
         mono: "web · chromium · firefox · webkit",
       },
     ],
-    notHead: "HORS PÉRIMÈTRE — VOLONTAIREMENT",
+    notHead: "HORS PÉRIMÈTRE · VOLONTAIREMENT",
     notItems: [
       "Triage natif mobile",
       "Rejeu du trafic en production",
@@ -337,7 +337,7 @@ const fr: Translations = {
     pageTitle: "Parlons de votre pretriage",
     pageSub: "Décrivez votre équipe et vos points de friction QA. Nous revenons vers vous sous 48h ouvrées avec un plan concret.",
     aboutIntro:
-      "Que vous soyez en plein audit QA ou simplement curieux du pretriage, écrivez-nous — un fondateur lit personnellement chaque message.",
+      "Que vous soyez en plein audit QA ou simplement curieux du pretriage, écrivez-nous. Un fondateur lit personnellement chaque message.",
     aboutTzLine: "Fuseaux EU & US · réponse sous 48h ouvrées",
     aboutLocLine: "Paris · Berlin",
     formTitle: "Candidature pilote",
@@ -364,7 +364,7 @@ const fr: Translations = {
     },
     submit: "Envoyer la candidature",
     submitting: "Envoi…",
-    successTitle: "Reçu — on revient vite.",
+    successTitle: "Reçu, on revient vite.",
     successSub: "Un fondateur de Meridian Flow vous écrira personnellement sous 48h ouvrées.",
     sendAnother: "Envoyer une autre candidature",
   },
@@ -409,7 +409,7 @@ const fr: Translations = {
     docsCards: [
       {
         title: "Schéma du verdict",
-        desc: "Contrat JSON émis par chaque run de pretriage — statut, catégorie, rayon d'impact, composant suspecté, artefacts.",
+        desc: "Contrat JSON émis par chaque run de pretriage : statut, catégorie, rayon d'impact, composant suspecté, artefacts.",
       },
       {
         title: "Installation du runner",
@@ -433,7 +433,7 @@ const fr: Translations = {
   notFound: {
     eyebrow: "404",
     title: "Page introuvable",
-    sub: "Cette page n'existe pas — ou n'est pas encore publique. Retournez à l'accueil ou écrivez-nous.",
+    sub: "Cette page n'existe pas, ou n'est pas encore publique. Retournez à l'accueil ou écrivez-nous.",
     ctaHome: "Retour à l'accueil",
     ctaContact: "Nous contacter",
   },
@@ -451,7 +451,7 @@ const fr: Translations = {
       terms: "Conditions",
       dpa: "DPA",
     },
-    copyright: "© 2026 Meridian Flow — un produit PennarStudio",
+    copyright: "© 2026 Meridian Flow · un produit PennarStudio",
   },
 };
 
@@ -488,7 +488,7 @@ const en: Translations = {
     ticketStatus: "Triaging",
     ticketTitle: "Checkout fails sometimes when applying promo code",
     ticketBody:
-      "Hi team — when I add the SUMMER25 code at the end the page freezes and I can't pay. Happens on my MacBook in Chrome. Not sure how to reproduce, sorry. Urgent for the campaign.",
+      "Hi team, when I add the SUMMER25 code at the end the page freezes and I can't pay. Happens on my MacBook in Chrome. Not sure how to reproduce, sorry. Urgent for the campaign.",
     handoff: "handoff",
     runner: "Meridian Flow runner",
     pretriageLabel: "PRETRIAGE · in progress",
@@ -524,7 +524,7 @@ const en: Translations = {
         thread: [
           { from: "dev", body: "Cannot reproduce locally on main. Browser version?", when: "+2h" },
           { from: "qa", body: "Chrome 124 I think? Will check tomorrow.", when: "+1d" },
-          { from: "dev", body: "Need exact steps. Also which env — staging or prod?", when: "+1d" },
+          { from: "dev", body: "Need exact steps. Also which env, staging or prod?", when: "+1d" },
           { from: "qa", body: "Staging-eu. It worked yesterday 🤷", when: "+2d" },
         ],
       },
@@ -538,7 +538,7 @@ const en: Translations = {
         thread: [
           { from: "dev", body: "Which customer? Can we get an invoice ID?", when: "+4h" },
           { from: "qa", body: "Forwarding the email…", when: "+1d" },
-          { from: "dev", body: "Closing for now — can't repro, no clear data.", when: "+3d" },
+          { from: "dev", body: "Closing for now, can't repro, no clear data.", when: "+3d" },
         ],
       },
       {
@@ -551,7 +551,7 @@ const en: Translations = {
         thread: [
           { from: "dev", body: "Slow how? Network? Server? No traces attached.", when: "+1h" },
           { from: "qa", body: "Just slow. Worked fine in my tests.", when: "+5h" },
-          { from: "dev", body: "Closing — needs measurable repro.", when: "+2d" },
+          { from: "dev", body: "Closing, needs measurable repro.", when: "+2d" },
           { from: "qa", body: "Reopening, two more reports today.", when: "+5d" },
         ],
       },
@@ -566,7 +566,7 @@ const en: Translations = {
   workflow: {
     eyebrow: "How it works",
     title: "A pretriage pipeline, not another inbox.",
-    sub: "Meridian Flow runs five deterministic steps between the ticket and the developer. Each step produces an artefact that the next step — or a human — can act on.",
+    sub: "Meridian Flow runs five deterministic steps between the ticket and the developer. Each step produces an artefact that the next step (or a human) can act on.",
     raceComment: "before debounce",
     steps: [
       {
@@ -593,7 +593,7 @@ const en: Translations = {
       {
         title: "Failing spec",
         tag: "ARTEFACT",
-        desc: "A minimal, deterministic Playwright spec — the smallest test that re-creates the bug.",
+        desc: "A minimal, deterministic Playwright spec: the smallest test that re-creates the bug.",
         code: true,
       },
       {
@@ -611,7 +611,7 @@ const en: Translations = {
       {
         title: "Developer-ready incident",
         tag: "OUTPUT",
-        desc: "The original ticket, now with a verdict, a failing spec, a trace, screenshots, and reproduction context — handed straight to engineering.",
+        desc: "The original ticket, now with a verdict, a failing spec, a trace, screenshots, and reproduction context, handed straight to engineering.",
         rows: [
           { k: "linked spec", v: "e2e/promo-code.race.spec.ts" },
           { k: "trace", v: "trace-PROD-2814.zip" },
@@ -625,7 +625,7 @@ const en: Translations = {
   outputs: {
     eyebrow: "What developers get",
     title: "Five artefacts. No back-and-forth.",
-    sub: "Every ticket lands in engineering with the same shape — so anyone on the team can act on it without reading the original Jira thread.",
+    sub: "Every ticket lands in engineering with the same shape, so anyone on the team can act on it without reading the original Jira thread.",
     tabs: [
       { id: "verdict", label: "Verdict", mono: "verdict.json" },
       { id: "spec", label: "Failing spec", mono: "spec.ts" },
@@ -637,7 +637,7 @@ const en: Translations = {
     specHeadMono: "Playwright · failing on main",
     specCom1: "Pretriage by Meridian Flow · PROD-2814",
     specCom2: "Reproduces 12/12 runs on staging-eu",
-    specCom3: "no wait — reproduces the race",
+    specCom3: "no wait, reproduces the race",
     commentHead: "posted as Jira comment · PROD-2814",
     commentSub: "written for the on-call engineer",
     commentName: "Meridian Flow",
@@ -684,7 +684,7 @@ const en: Translations = {
   security: {
     eyebrow: "Security & architecture",
     title: "Your code stays inside your network.",
-    sub: "The reproduction runner lives in your infrastructure. Only the artefacts you choose — verdicts, traces, redacted screenshots — ever reach our control plane.",
+    sub: "The reproduction runner lives in your infrastructure. Only the artefacts you choose (verdicts, traces, redacted screenshots) ever reach our control plane.",
     perimeter: "YOUR PERIMETER",
     saasLabel: "MERIDIAN FLOW SAAS",
     nodes: {
@@ -728,7 +728,7 @@ const en: Translations = {
   stack: {
     eyebrow: "Opinionated by design",
     title: "Built for one shape of team, on purpose.",
-    sub: "Meridian Flow doesn't try to be a generic AI agent. It is sharp about who it helps and what it integrates with — that's the only way pretriage can be reliable.",
+    sub: "Meridian Flow doesn't try to be a generic AI agent. It is sharp about who it helps and what it integrates with. That's the only way pretriage can be reliable.",
     items: [
       {
         name: "Jira",
@@ -745,7 +745,7 @@ const en: Translations = {
       {
         name: "Staging environments",
         role: "where we reproduce",
-        desc: "We run against real staging — not a mock. Bring an environment, point the runner at it, give it test credentials. We work with the shape you already have.",
+        desc: "We run against real staging, not a mock. Bring an environment, point the runner at it, give it test credentials. We work with the shape you already have.",
         mono: "staging.* · preview.* · ephemeral envs",
       },
       {
@@ -755,7 +755,7 @@ const en: Translations = {
         mono: "web · chromium · firefox · webkit",
       },
     ],
-    notHead: "NOT IN SCOPE — ON PURPOSE",
+    notHead: "NOT IN SCOPE · ON PURPOSE",
     notItems: [
       "Native mobile triage",
       "Production traffic replay",
@@ -791,7 +791,7 @@ const en: Translations = {
     pageSub:
       "Tell us about your team and where QA friction shows up. We come back within two business days with a concrete plan.",
     aboutIntro:
-      "Whether you're mid-QA-audit or just curious about pretriage — write us. A founder personally reads every message.",
+      "Whether you're mid-QA-audit or just curious about pretriage, write us. A founder personally reads every message.",
     aboutTzLine: "EU & US timezones · reply within two business days",
     aboutLocLine: "Paris · Berlin",
     formTitle: "Pilot application",
@@ -818,7 +818,7 @@ const en: Translations = {
     },
     submit: "Send application",
     submitting: "Sending…",
-    successTitle: "Got it — talk soon.",
+    successTitle: "Got it, talk soon.",
     successSub: "A Meridian Flow founder will write to you personally within two business days.",
     sendAnother: "Send another application",
   },
@@ -863,7 +863,7 @@ const en: Translations = {
     docsCards: [
       {
         title: "Verdict schema",
-        desc: "JSON contract that every pretriage run emits — status, category, blast radius, suspected component, artefacts.",
+        desc: "JSON contract that every pretriage run emits: status, category, blast radius, suspected component, artefacts.",
       },
       {
         title: "Runner setup",
@@ -887,7 +887,7 @@ const en: Translations = {
   notFound: {
     eyebrow: "404",
     title: "Page not found",
-    sub: "This page doesn't exist — or isn't public yet. Head back home or write to us.",
+    sub: "This page doesn't exist, or isn't public yet. Head back home or write to us.",
     ctaHome: "Back to home",
     ctaContact: "Get in touch",
   },
@@ -905,7 +905,7 @@ const en: Translations = {
       terms: "Terms",
       dpa: "DPA",
     },
-    copyright: "© 2026 Meridian Flow — a PennarStudio product",
+    copyright: "© 2026 Meridian Flow · a PennarStudio product",
   },
 };
 
