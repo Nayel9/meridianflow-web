@@ -143,7 +143,7 @@ export function Workflow() {
                 </h3>
                 <p className="mt-1.5 max-w-[580px] text-fg-mute text-pretty">{current.desc}</p>
               </div>
-              <div className="flex flex-1 flex-col gap-2 bg-[oklch(0.165_0.008_250)] px-6 py-5">
+              <div className="flex flex-1 flex-col gap-2 bg-[oklch(0.165_0.005_140)] px-6 py-5">
                 {renderDetail(current, t.workflow.raceComment)}
               </div>
             </div>

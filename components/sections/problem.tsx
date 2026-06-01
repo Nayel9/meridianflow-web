@@ -11,7 +11,7 @@ function TicketCard({ ticket }: { ticket: ProblemTicket }) {
   const toneMap = { warn: "warn", fail: "fail", pass: "pass", info: "info", "": undefined } as const;
   const tone = toneMap[ticket.statusTone];
   return (
-    <article className="flex h-full flex-col gap-3 rounded-lg border border-line bg-bg-elev p-5 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.34_0.013_250)]">
+    <article className="flex h-full flex-col gap-3 rounded-lg border border-line bg-bg-elev p-5 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.32_0.010_140)]">
       <header className="flex items-center gap-2.5 font-mono text-[11.5px] tracking-[0.04em] text-fg-mute">
         <span className="font-medium text-fg-soft">{ticket.key}</span>
         <span>•</span>

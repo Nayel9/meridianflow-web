@@ -14,7 +14,7 @@ export function Stack() {
         <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
           {t.stack.items.map((it, i) => (
             <Reveal key={it.name} delay={i * 0.06}>
-              <article className="flex h-full flex-col gap-3.5 rounded-lg border border-line bg-bg-elev p-6 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.34_0.013_250)]">
+              <article className="flex h-full flex-col gap-3.5 rounded-lg border border-line bg-bg-elev p-6 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.32_0.010_140)]">
                 <header className="flex items-center gap-4">
                   <span className="rounded border border-accent-line bg-accent-soft px-1.5 py-1 font-mono text-[11.5px] tracking-[0.06em] text-accent">
                     {String(i + 1).padStart(2, "0")}
@@ -34,7 +34,7 @@ export function Stack() {
         </div>
 
         <Reveal className="mt-7">
-          <div className="rounded-lg border border-line-soft bg-[oklch(0.165_0.008_250)] p-6">
+          <div className="rounded-lg border border-line-soft bg-[oklch(0.165_0.005_140)] p-6">
             <div className="mb-3.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-fg-dim">
               {t.stack.notHead}
             </div>
