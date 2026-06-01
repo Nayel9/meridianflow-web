@@ -45,9 +45,9 @@ function HeroShowcase() {
         <div className="flex items-center justify-between border-b border-line-soft px-4 py-3 font-mono text-xs text-fg-mute sm:px-5">
           <div className="flex items-center gap-3">
             <span className="flex gap-1.5" aria-hidden="true">
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.28_0.006_140)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.28_0.006_140)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.28_0.006_140)]" />
             </span>
             <span className="hidden sm:inline">{t.showcase.run}</span>
           </div>
