@@ -13,7 +13,7 @@ export default function OG() {
           width: "100%",
           height: "100%",
           background:
-            "radial-gradient(ellipse 100% 60% at 30% 0%, oklch(0.84 0.09 200 / 0.10), transparent 60%), #1a1f2a",
+            "radial-gradient(ellipse 100% 60% at 30% 0%, oklch(0.87 0.20 130 / 0.10), transparent 60%), #1a1f2a",
           color: "white",
           display: "flex",
           flexDirection: "column",
@@ -22,7 +22,7 @@ export default function OG() {
           fontFamily: "Helvetica, Arial, sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, color: "oklch(0.84 0.09 200)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, color: "oklch(0.87 0.20 130)" }}>
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" />
             <path d="M12 3 Q5 12 12 21" stroke="currentColor" strokeWidth="1.4" fill="none" />
@@ -35,7 +35,7 @@ export default function OG() {
           <div
             style={{
               fontSize: 24,
-              color: "oklch(0.84 0.09 200)",
+              color: "oklch(0.87 0.20 130)",
               fontFamily: "monospace",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -53,7 +53,7 @@ export default function OG() {
             }}
           >
             Every bug reaches developers{" "}
-            <span style={{ color: "oklch(0.84 0.09 200)" }}>already confirmed</span> and reproducible.
+            <span style={{ color: "oklch(0.87 0.20 130)" }}>already confirmed</span> and reproducible.
           </div>
         </div>
         <div
