@@ -125,4 +125,24 @@
   .text-pretty {
     text-wrap: pretty;
   }
+
+  /* MeridianFlow logo — iris scan animation (matches the app sidebar glyph) */
+  @keyframes scan {
+    0%,
+    100% {
+      transform: translateX(-2px);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+  }
+  .eye-iris {
+    transform-origin: center;
+    animation: scan 4.2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .eye-iris {
+      animation: none;
+    }
+  }
 }

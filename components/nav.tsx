@@ -49,7 +49,7 @@ export function Nav({ variant = "landing" }: { variant?: "landing" | "page" }) {
     >
       <div className="shell flex h-16 items-center justify-between gap-8">
         <Link href="/" aria-label="Meridian Flow home" className="flex items-center gap-2">
-          <Brand />
+          <Brand animated />
           <Tag tone="info" className="ml-1">
             {t.nav.beta}
           </Tag>
