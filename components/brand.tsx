@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export function MeridianMark({ size = 26, className }: { size?: number; className?: string }) {
+export function MeridianMark({ size = 52, className }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -30,7 +30,7 @@ export function MeridianMark({ size = 26, className }: { size?: number; classNam
   );
 }
 
-export function Brand({ size = 26, label = true }: { size?: number; label?: boolean }) {
+export function Brand({ size = 52, label = true }: { size?: number; label?: boolean }) {
   return (
     <span className="inline-flex items-center gap-2.5 text-[15px] font-medium tracking-[-0.01em]">
       <MeridianMark size={size} />
