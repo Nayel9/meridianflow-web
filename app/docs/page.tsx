@@ -24,7 +24,7 @@ export default function DocsPage() {
             <Link
               key={c.title}
               href="/contact"
-              className="group flex flex-col gap-3 rounded-lg border border-line bg-bg-elev p-5 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.34_0.013_250)]"
+              className="group flex flex-col gap-3 rounded-lg border border-line bg-bg-elev p-5 transition-all hover:-translate-y-0.5 hover:border-[oklch(0.32_0.010_140)]"
             >
               <Icon className="size-5 text-accent" />
               <h3 className="text-[15px] font-medium tracking-[-0.01em] text-fg">{c.title}</h3>
