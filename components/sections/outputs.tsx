@@ -142,7 +142,7 @@ function CommentPanel() {
   return (
     <div className="overflow-hidden rounded-lg border border-line bg-bg-elev">
       <CodeHead left={t.outputs.commentHead} right={t.outputs.commentSub} />
-      <div className="bg-[oklch(0.165_0.008_250)] p-6">
+      <div className="bg-[oklch(0.165_0.005_140)] p-6">
         <div className="mb-4 flex items-center gap-3">
           <span className="inline-grid size-8 place-items-center rounded-full border border-accent-line bg-accent-soft font-mono text-[11px] tracking-[0.06em] text-accent">
             MF
@@ -213,8 +213,8 @@ function FrameMock({ variant }: { variant: "pre" | "mid" | "fail" }) {
     <div
       className={cn(
         "absolute inset-3 overflow-hidden rounded border border-line-soft",
-        "bg-[linear-gradient(180deg,oklch(0.22_0.01_250)_0%,oklch(0.22_0.01_250)_38px,oklch(0.2_0.008_250)_38px,oklch(0.2_0.008_250)_100%)]",
-        variant === "mid" && "shadow-[inset_0_0_0_1px_oklch(0.84_0.09_200_/_0.32)]",
+        "bg-[linear-gradient(180deg,oklch(0.22_0.006_140)_0%,oklch(0.22_0.006_140)_38px,oklch(0.2_0.005_140)_38px,oklch(0.2_0.005_140)_100%)]",
+        variant === "mid" && "shadow-[inset_0_0_0_1px_oklch(0.87_0.20_130_/_0.30)]",
         variant === "fail" && "shadow-[inset_0_0_0_1px_oklch(0.72_0.17_25_/_0.4)]",
       )}
     >
@@ -222,7 +222,7 @@ function FrameMock({ variant }: { variant: "pre" | "mid" | "fail" }) {
       <span
         className="absolute left-3.5 right-3.5 top-[58px] block h-14"
         style={{
-          background: "repeating-linear-gradient(180deg, oklch(0.225 0.011 250) 0 1px, transparent 1px 14px)",
+          background: "repeating-linear-gradient(180deg, oklch(0.225 0.006 140) 0 1px, transparent 1px 14px)",
         }}
       />
     </div>
@@ -248,7 +248,7 @@ function ScreensPanel() {
               i < arr.length - 1 && "border-b border-line-soft sm:border-b-0 sm:border-r",
             )}
           >
-            <div className="relative aspect-[16/11] bg-[oklch(0.18_0.008_250)]">
+            <div className="relative aspect-[16/11] bg-[oklch(0.18_0.005_140)]">
               <FrameMock variant={f.variant} />
               {"fail" in f && f.fail ? (
                 <div className="absolute inset-x-3 bottom-3 rounded border border-fail-line bg-fail-soft px-2.5 py-1.5 font-mono text-[11px] tracking-[0.04em] text-fail">
@@ -261,7 +261,7 @@ function ScreensPanel() {
                 </div>
               ) : null}
             </div>
-            <div className="flex items-center gap-3 border-t border-line-soft bg-[oklch(0.165_0.008_250)] px-4 py-3 font-mono text-[12px] text-fg-soft">
+            <div className="flex items-center gap-3 border-t border-line-soft bg-[oklch(0.165_0.005_140)] px-4 py-3 font-mono text-[12px] text-fg-soft">
               <span className="text-fg-dim">{String(i + 1).padStart(2, "0")}</span>
               <span>{f.label}</span>
               {"fail" in f && f.fail ? <Tag tone="fail" className="ml-auto">fail</Tag> : null}
