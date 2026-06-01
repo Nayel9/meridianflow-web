@@ -52,8 +52,8 @@ export default function OG() {
               maxWidth: 1000,
             }}
           >
-            Every bug reaches developers{" "}
-            <span style={{ color: "oklch(0.87 0.20 130)" }}>already confirmed</span> and reproducible.
+            Bugs reach developers{" "}
+            <span style={{ color: "oklch(0.87 0.20 130)" }}>reproduced, or ruled out</span> — never ambiguous.
           </div>
         </div>
         <div

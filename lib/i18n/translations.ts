@@ -12,12 +12,12 @@ const fr: Translations = {
     beta: "Bêta",
   },
   hero: {
-    pillTag: "Nouveau",
+    pillTag: "Bêta",
     pillText: "Pretriage pour les équipes Jira + Playwright",
-    titleBefore: "Chaque bug arrive en dev ",
-    titleEm: "déjà confirmé",
-    titleAfter: " et reproductible.",
-    sub: "Meridian Flow reproduit, valide et contextualise automatiquement les rapports de bugs avant que l'engineering ne les prenne en charge — transformant des tickets vagues en incidents avec un spec qui échoue, un verdict et les traces pour les corriger.",
+    titleBefore: "Les bugs arrivent en dev ",
+    titleEm: "reproduits, ou écartés",
+    titleAfter: " — jamais ambigus.",
+    sub: "Meridian Flow rejoue chaque ticket sur votre staging et rend un verdict technique : un spec Playwright qui échoue quand le bug est réel, une raison claire quand il ne l'est pas. Vos ingénieurs corrigent au lieu d'enquêter.",
     ctaPrimary: "Candidater au pilote",
     ctaSecondary: "Réserver une démo",
     meta1: "Tourne sur votre infra",
@@ -102,10 +102,10 @@ const fr: Translations = {
       },
     ],
     stats: [
-      { v: "42%", l: "des bugs sont réouverts ou fermés en « impossible à reproduire »" },
-      { v: "3,1×", l: "allers-retours QA ↔ dev en moyenne avant qu'un ticket soit actionnable" },
-      { v: "26 min", l: "de temps ingénieur senior perdues par ticket ambigu" },
-      { v: "1 sur 5", l: "incidents réels détectés trop tard" },
+      { v: "Réouverts", l: "des bugs ferment à tort en « pas reproductible », puis reviennent" },
+      { v: "Aller-retour", l: "plusieurs cycles QA ↔ dev avant qu'un ticket soit actionnable" },
+      { v: "Matinées", l: "de temps ingénieur senior passées à reproduire, pas à corriger" },
+      { v: "Trop tard", l: "les incidents réels se confirment souvent une fois en prod" },
     ],
   },
   workflow: {
@@ -438,7 +438,7 @@ const fr: Translations = {
     ctaContact: "Nous contacter",
   },
   footer: {
-    tagline: "Pretriage propulsé par l'IA pour les équipes logicielles. Construit à Paris.",
+    tagline: "Pretriage technique pour les équipes Jira + Playwright. Construit à Paris.",
     product: "Produit",
     trust: "Confiance",
     links: {
@@ -467,12 +467,12 @@ const en: Translations = {
     beta: "Beta",
   },
   hero: {
-    pillTag: "New",
+    pillTag: "Beta",
     pillText: "Pretriage for Jira + Playwright teams",
-    titleBefore: "Every bug reaches developers ",
-    titleEm: "already confirmed",
-    titleAfter: " and reproducible.",
-    sub: "Meridian Flow automatically reproduces, validates and contextualises bug reports before engineering picks them up — turning vague tickets into incidents with a failing spec, a verdict, and the traces to fix them.",
+    titleBefore: "Bugs reach developers ",
+    titleEm: "reproduced, or ruled out",
+    titleAfter: " — never ambiguous.",
+    sub: "Meridian Flow replays every ticket on your staging and returns a technical verdict: a failing Playwright spec when the bug is real, a clear reason when it isn't. Your engineers fix instead of investigate.",
     ctaPrimary: "Apply for pilot",
     ctaSecondary: "Book a demo",
     meta1: "Runs on your infra",
@@ -557,10 +557,10 @@ const en: Translations = {
       },
     ],
     stats: [
-      { v: "42%", l: "of bugs are reopened or closed as “cannot reproduce”" },
-      { v: "3.1×", l: "average QA ↔ dev round-trips before a ticket is actionable" },
-      { v: "26 min", l: "of senior engineering time lost per ambiguous ticket" },
-      { v: "1 in 5", l: "incidents that turn out to be real are caught too late" },
+      { v: "Reopened", l: "bugs wrongly closed as “cannot reproduce” keep coming back" },
+      { v: "Round-trips", l: "several QA ↔ dev cycles before a ticket is actionable" },
+      { v: "Mornings", l: "of senior engineering time spent reproducing, not fixing" },
+      { v: "Too late", l: "real incidents often confirmed only once in production" },
     ],
   },
   workflow: {
@@ -892,7 +892,7 @@ const en: Translations = {
     ctaContact: "Get in touch",
   },
   footer: {
-    tagline: "AI-powered pretriage for software teams. Built in Paris.",
+    tagline: "Technical pretriage for Jira + Playwright teams. Built in Paris.",
     product: "Product",
     trust: "Trust",
     links: {

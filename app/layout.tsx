@@ -21,17 +21,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://meridianflow.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Meridian Flow — Pretriage for software teams",
+    default: "Meridian Flow — Bug reproduction & technical pretriage for Jira + Playwright",
     template: "%s · Meridian Flow",
   },
   description:
-    "Meridian Flow reproduces, validates, and contextualises bug reports before engineering picks them up — turning vague tickets into incidents with a failing spec, a verdict, and the traces to fix them.",
+    "Meridian Flow reproduces, validates, and contextualises bug reports before engineering picks them up — returning a technical verdict, a failing Playwright spec when the bug is real, and the traces to fix it.",
   keywords: [
     "bug triage",
+    "bug reproduction",
+    "QA triage",
     "QA automation",
-    "Playwright",
+    "Playwright testing",
     "Jira",
-    "AI pretriage",
+    "reproducible bug reports",
     "incident reproduction",
     "engineering productivity",
   ],
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Meridian Flow",
     title: "Meridian Flow — Pretriage for software teams",
-    description: "Every bug reaches developers already confirmed and reproducible.",
+    description: "Bugs reach developers reproduced, or ruled out — never ambiguous.",
     url: siteUrl,
     locale: "en_US",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Meridian Flow — Pretriage for software teams",
-    description: "Every bug reaches developers already confirmed and reproducible.",
+    description: "Bugs reach developers reproduced, or ruled out — never ambiguous.",
     images: ["/opengraph-image"],
   },
   robots: {
