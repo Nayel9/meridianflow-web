@@ -22,8 +22,8 @@
   body {
     @apply min-h-screen overflow-x-hidden;
     background:
-      radial-gradient(ellipse 90% 60% at 50% -10%, oklch(0.84 0.09 200 / 0.05), transparent 60%),
-      var(--tw-bg-opacity, 1) oklch(0.145 0.008 250);
+      radial-gradient(ellipse 90% 60% at 50% -10%, oklch(0.87 0.20 130 / 0.05), transparent 60%),
+      var(--tw-bg-opacity, 1) oklch(0.145 0.004 140);
   }
 
   ::selection {
@@ -32,7 +32,7 @@
 
   /* Focus rings — keyboard-only, premium */
   :focus-visible {
-    outline: 2px solid oklch(0.84 0.09 200 / 0.55);
+    outline: 2px solid oklch(0.87 0.20 130 / 0.55);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -43,8 +43,8 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      linear-gradient(to right, oklch(0.265 0.012 250 / 0.35) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.265 0.012 250 / 0.35) 1px, transparent 1px);
+      linear-gradient(to right, oklch(0.265 0.008 140 / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.265 0.008 140 / 0.35) 1px, transparent 1px);
     background-size: 64px 64px;
     background-position: -1px -1px;
     mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
@@ -98,7 +98,7 @@
     color: oklch(0.78 0.13 305);
   }
   .tok-fn {
-    color: oklch(0.84 0.09 200);
+    color: oklch(0.87 0.20 130);
   }
   .tok-str {
     color: oklch(0.82 0.13 95);
@@ -107,7 +107,7 @@
     color: oklch(0.8 0.12 35);
   }
   .tok-com {
-    color: oklch(0.48 0.012 245);
+    color: oklch(0.48 0.008 140);
     font-style: italic;
   }
   .tok-prop {
