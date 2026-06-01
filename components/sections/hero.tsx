@@ -40,14 +40,14 @@ function HeroShowcase() {
 
   return (
     <Reveal className="mt-12 sm:mt-16 lg:mt-20">
-      <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-bg-elev to-[oklch(0.165_0.008_250)]">
+      <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-bg-elev to-[oklch(0.165_0.005_140)]">
         {/* head */}
         <div className="flex items-center justify-between border-b border-line-soft px-4 py-3 font-mono text-xs text-fg-mute sm:px-5">
           <div className="flex items-center gap-3">
             <span className="flex gap-1.5" aria-hidden="true">
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.012_250)]" />
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.012_250)]" />
-              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.012_250)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
+              <span className="size-2.5 rounded-full bg-[oklch(0.3_0.006_140)]" />
             </span>
             <span className="hidden sm:inline">{t.showcase.run}</span>
           </div>
@@ -61,7 +61,7 @@ function HeroShowcase() {
 
         <div className="grid min-h-[380px] md:grid-cols-[1.2fr_1.5fr]">
           {/* left — ticket input */}
-          <div className="flex flex-col gap-4 border-b border-line-soft bg-[oklch(0.16_0.008_250)] p-5 md:border-b-0 md:border-r">
+          <div className="flex flex-col gap-4 border-b border-line-soft bg-[oklch(0.16_0.004_140)] p-5 md:border-b-0 md:border-r">
             <div className="flex items-center justify-between font-mono text-[10.5px] uppercase tracking-[0.14em] text-fg-dim">
               <span>{t.showcase.inputLabel}</span>
             </div>
@@ -100,7 +100,7 @@ function HeroShowcase() {
               <span className="text-fg-mute">{t.showcase.stepsCount}</span>
             </div>
 
-            <ul className="grid divide-y divide-line-soft overflow-hidden rounded-lg border border-line-soft bg-[oklch(0.165_0.008_250)]">
+            <ul className="grid divide-y divide-line-soft overflow-hidden rounded-lg border border-line-soft bg-[oklch(0.165_0.005_140)]">
               {STEPS.map((s, i) => {
                 const next = STEPS[i + 1];
                 const endAt = next ? next.startAt : END_AT;
@@ -148,7 +148,7 @@ function HeroShowcase() {
               })}
             </ul>
 
-            <div className="rounded-lg border border-line-soft bg-[oklch(0.155_0.008_250)] p-3.5 font-mono text-[12.5px]">
+            <div className="rounded-lg border border-line-soft bg-[oklch(0.155_0.004_140)] p-3.5 font-mono text-[12.5px]">
               <div className="flex items-center gap-3.5 border-b border-dashed border-line-soft py-1.5">
                 <span className="w-[88px] text-[11px] uppercase tracking-[0.06em] text-fg-dim">
                   {t.showcase.verdictMuted}
@@ -178,7 +178,13 @@ function HeroShowcase() {
 export function Hero() {
   const t = useT();
   return (
-    <header className="relative pt-20 pb-16 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28">
+    <header
+      className="relative border-t border-[oklch(0.87_0.20_130_/_0.35)] pt-20 pb-16 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28"
+      style={{
+        backgroundImage:
+          "radial-gradient(ellipse 80% 50% at 50% -5%, oklch(0.87 0.20 130 / 0.10), transparent 65%)",
+      }}
+    >
       <div className="bg-grid" aria-hidden="true" />
       <div className="shell relative">
         <div className="grid max-w-[880px] gap-7">
