@@ -15,7 +15,7 @@ export function Pilot() {
       className="relative border-t border-line-soft py-20 sm:py-28 lg:py-32"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse 80% 60% at 30% 0%, oklch(0.84 0.09 200 / 0.06) 0%, transparent 60%)",
+          "radial-gradient(ellipse 80% 60% at 30% 0%, oklch(0.87 0.20 130 / 0.06) 0%, transparent 60%)",
       }}
     >
       <div className="shell">

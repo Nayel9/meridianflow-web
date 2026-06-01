@@ -72,7 +72,7 @@ export function Security() {
                 className="hidden w-px flex-1 lg:block"
                 style={{
                   background:
-                    "repeating-linear-gradient(180deg, oklch(0.84 0.09 200 / 0.32) 0 4px, transparent 4px 8px)",
+                    "repeating-linear-gradient(180deg, oklch(0.87 0.20 130 / 0.30) 0 4px, transparent 4px 8px)",
                 }}
               />
               <div className="flex flex-col items-center gap-1.5 rounded-full border border-line bg-bg-elev px-5 py-3.5 font-mono text-[11.5px] tracking-[0.04em] text-fg-mute">
@@ -85,7 +85,7 @@ export function Security() {
                 className="hidden w-px flex-1 lg:block"
                 style={{
                   background:
-                    "repeating-linear-gradient(180deg, oklch(0.84 0.09 200 / 0.32) 0 4px, transparent 4px 8px)",
+                    "repeating-linear-gradient(180deg, oklch(0.87 0.20 130 / 0.30) 0 4px, transparent 4px 8px)",
                 }}
               />
             </div>
@@ -126,7 +126,7 @@ export function Security() {
                 className="rounded-lg border border-line-soft bg-bg-elev p-5"
               >
                 <div className="mb-2.5 flex items-center gap-2.5">
-                  <span className="size-2 rounded-full bg-accent shadow-[0_0_0_4px_oklch(0.84_0.09_200_/_0.18)]" />
+                  <span className="size-2 rounded-full bg-accent shadow-[0_0_0_4px_oklch(0.87_0.20_130_/_0.18)]" />
                   <span className="text-[15px] font-medium tracking-[-0.01em]">{m.name}</span>
                 </div>
                 <p className="mb-3.5 text-[13.5px] leading-[1.55] text-fg-mute">{m.desc}</p>
