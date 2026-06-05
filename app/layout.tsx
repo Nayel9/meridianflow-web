@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { LangProvider } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" suppressHydrationWarning className="dark">
       <body className={cn(sans.variable, mono.variable, "font-sans antialiased")}>
         <LangProvider>{children}</LangProvider>
+        <Analytics />
       </body>
     </html>
   );
